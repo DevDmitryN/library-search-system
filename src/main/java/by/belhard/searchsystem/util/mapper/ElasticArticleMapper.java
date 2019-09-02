@@ -4,8 +4,6 @@ import by.belhard.searchsystem.entity.Article;
 import by.belhard.searchsystem.entity.ElasticArticle;
 import by.belhard.searchsystem.service.ArticleService;
 import by.belhard.searchsystem.service.FileSystemService;
-import by.belhard.searchsystem.service.impl.ArticleServiceImpl;
-import by.belhard.searchsystem.service.impl.FileSystemServiceImpl;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +32,8 @@ public class ElasticArticleMapper extends AbstractMapper<Article, ElasticArticle
                 .addMappings(m -> m.skip(ElasticArticle::setContent))
                 .setPostConverter(toDtoConverter());
         mapper.createTypeMap(ElasticArticle.class,Article.class)
-                .addMappings(m -> m.skip(Article::setTitle))
-                .addMappings(m -> m.skip(Article::setDirectoryPath))
+                .addMappings(m -> m.skip(Article::setName))
+                .addMappings(m -> m.skip(Article::setUrl))
                 .setPostConverter(toEntityConverter());
     }
 
@@ -58,7 +56,7 @@ public class ElasticArticleMapper extends AbstractMapper<Article, ElasticArticle
     }
 
     private void mapSpecificFields(Article source, ElasticArticle destination){
-        destination.setTitle(source.getTitle().replace(".docx",""));
+        destination.setTitle(source.getName().replace(".docx",""));
         String content = fileSystemService.getText(source)
                 .replace("\n"," ")
                 .replace("-","");
@@ -67,7 +65,7 @@ public class ElasticArticleMapper extends AbstractMapper<Article, ElasticArticle
 
     private void mapSpecificFields(ElasticArticle source, Article destination){
         Article article = articleService.getById(source.getId());
-        destination.setTitle(article.getTitle());
-        destination.setDirectoryPath(article.getDirectoryPath());
+        destination.setName(article.getName());
+        destination.setUrl(article.getUrl());
     }
 }

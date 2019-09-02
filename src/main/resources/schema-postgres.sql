@@ -2,8 +2,9 @@ DROP SCHEMA IF EXISTS documents;
 
 CREATE SCHEMA library;
 
-CREATE TABLE documents (
-    id BIGSERIAL,
-    system_path VARCHAR,
-    CONSTRAINT path_pk PRIMARY KEY (id)
+CREATE TABLE "library".articles (
+    id int8 NOT NULL GENERATED ALWAYS AS IDENTITY,
+    url varchar NOT NULL,
+    "name" varchar NOT NULL,
+    CONSTRAINT articles_pk PRIMARY KEY (id)
 );

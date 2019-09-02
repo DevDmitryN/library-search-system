@@ -1,7 +1,6 @@
 package by.belhard.searchsystem.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 
@@ -12,12 +11,9 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "title")
-    private String title;
-    @Column(name = "directory_path")
-    private String directoryPath;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "url")
+    private String url;
 
-    public String getPath(){
-        return directoryPath + title;
-    }
 }

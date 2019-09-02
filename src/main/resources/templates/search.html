@@ -37,7 +37,7 @@
                 </th:block>
                 <th:block th:each="article : ${result}">
                     <div class="download-block">
-                        <a th:href="${article.getPath()}" download th:text="${article.getTitle()}"></a>
+                        <a th:href="${article.getUrl()}"     th:text="${article.getName()}"></a>
                     </div>
                 </th:block>
             </div>
