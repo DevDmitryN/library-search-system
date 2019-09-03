@@ -1,4 +1,4 @@
-package by.belhard.searchsystem.repository;
+package by.belhard.searchsystem.service;
 
 import by.belhard.searchsystem.model.Article;
 import org.junit.Test;
@@ -13,15 +13,14 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ArticleRepositoryTest {
+public class ArticleServiceTest {
 
     @Autowired
-    private ArticleRepository articleRepository;
+    private ArticleService articleService;
 
     @Test
     public void getAll(){
-        List<Article> articles = (List<Article>) articleRepository.findAll();
+        List<Article> articles = articleService.getAll();
         assertFalse(articles.isEmpty());
     }
-
 }

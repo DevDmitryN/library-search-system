@@ -1,6 +1,6 @@
 package by.belhard.searchsystem.service;
 
-import by.belhard.searchsystem.entity.Article;
+import by.belhard.searchsystem.model.Article;
 
 import java.util.List;
 

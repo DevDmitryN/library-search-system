@@ -28,7 +28,7 @@ public class SearchController {
     @GetMapping("/search")
     public String searchResult(@RequestParam(name = "request", required = false, defaultValue = "") String request, Model model) {
         if (request.equals("")) {
-            return "redirect: /";
+            return "redirect:/";
         } else {
             model.addAttribute("result", articleMapper.toEntityList(elasticArticleService.search(request)));
             return "search";

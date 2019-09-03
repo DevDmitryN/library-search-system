@@ -1,6 +1,6 @@
 package by.belhard.searchsystem.repository.impl;
 
-import by.belhard.searchsystem.entity.ElasticArticle;
+import by.belhard.searchsystem.model.ElasticArticle;
 import by.belhard.searchsystem.repository.ElasticArticleRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,6 @@ import org.elasticsearch.client.indices.PutMappingRequest;
 import org.elasticsearch.common.Strings;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.FetchSourceContext;

@@ -1,6 +1,6 @@
 package by.belhard.searchsystem.service.impl;
 
-import by.belhard.searchsystem.entity.Article;
+import by.belhard.searchsystem.model.Article;
 import by.belhard.searchsystem.repository.ArticleRepository;
 import by.belhard.searchsystem.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package by.belhard.searchsystem.entity;
+package by.belhard.searchsystem.model;
 
 import lombok.Data;
 
