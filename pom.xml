@@ -21,7 +21,7 @@
         <apache.poi.version>4.1.0</apache.poi.version>
         <apache.poi.ooxml.version>4.1.0</apache.poi.ooxml.version>
         <modelmapper.version>2.3.5</modelmapper.version>
-        <jsoup.version>1.12.1</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
     </properties>
 
     <dependencies>
