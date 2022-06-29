@@ -18,7 +18,7 @@
         <java.version>11</java.version>
         <elasticsearch.version>7.3.1</elasticsearch.version>
         <spring.data.jpa.version>2.1.7.RELEASE</spring.data.jpa.version>
-        <apache.poi.version>4.1.0</apache.poi.version>
+        <apache.poi.version>4.1.1</apache.poi.version>
         <apache.poi.ooxml.version>4.1.0</apache.poi.ooxml.version>
         <modelmapper.version>2.3.5</modelmapper.version>
         <jsoup.version>1.12.1</jsoup.version>
